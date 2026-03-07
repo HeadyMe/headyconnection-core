@@ -1,0 +1,12 @@
+{
+  "name": "HeadyConnection",
+  "tagline": "Community & Connection",
+  "description": "Collaborative AI workspace — connecting creators, developers, and enterprises through shared intelligence.",
+  "accent": "#f472b6",
+  "features": [
+    {"icon": "🤝", "title": "Collaborative Workspaces", "desc": "Shared AI context across teams"},
+    {"icon": "💡", "title": "Knowledge Sharing", "desc": "Cross-team intelligence transfer"},
+    {"icon": "🌐", "title": "Community Hub", "desc": "Open-source contribution platform"},
+    {"icon": "🔗", "title": "Deep Integration", "desc": "Connect with all Heady services"}
+  ]
+}

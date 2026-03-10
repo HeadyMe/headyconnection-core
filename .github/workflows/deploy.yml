@@ -1,9 +1,13 @@
 name: Deploy HeadyConnection
+
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,3 +17,12 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm test
+      - name: Verify server starts
+        run: |
+          node index.js &
+          sleep 2
+          curl -f http://localhost:8080/health || exit 1
+          curl -f http://localhost:8080/ || exit 1
+          curl -f http://localhost:8080/docs || exit 1
+          curl -f http://localhost:8080/services || exit 1
+          kill %1

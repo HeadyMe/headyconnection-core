@@ -25,7 +25,7 @@ function log(level, message, meta = {}) {
   if (NODE_ENV === 'production') {
     process.stdout.write(JSON.stringify(entry) + '\n');
   } else {
-    console.log(`[${entry.ts}] ${level.toUpperCase()} ${message}`, Object.keys(meta).length ? meta : '');
+    process.stdout.write(`[${entry.ts}] ${level.toUpperCase()} ${message} ${Object.keys(meta).length ? JSON.stringify(meta) : ''}\n`);
   }
 }
 
